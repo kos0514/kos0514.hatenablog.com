@@ -1,0 +1,27 @@
+# Dependabot configuration for kos0514.hatenablog.com
+# はてなブログワークフロー管理用の自動依存関係更新設定
+
+version: 2
+updates:
+  # GitHub Actions の自動更新設定
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # 毎週土曜日に更新をチェック
+      interval: "weekly"
+      day: "saturday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    # プルリクエストの設定（個人対応なので適度に）
+    open-pull-requests-limit: 3
+    # コミットメッセージの設定
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    # レビュー担当者の設定
+    reviewers:
+      - "kos0514"
+    # ラベルの設定
+    labels:
+      - "dependencies"
+      - "github-actions"
