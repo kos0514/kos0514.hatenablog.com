@@ -1,0 +1,35 @@
+{
+  "name": "kos0514.hatenablog.com",
+  "version": "1.0.0",
+  "description": "- このBoilerplateは、企業がはてなブログで技術ブログを運営する際のレビューや公開作業など、運営ワークフローを支援する目的で作成しています - GitHub 上で、はてなブログとの記事の同期、下書きの作成・編集・公開、公開記事の編集などを行うことができます。下書きの作成時にプルリクエストが作成されるため、記事のレビューなどの業務のワークフローに組み込むことが容易になります - 本機能はベータ版です。正常に動作しない可能性がありますが、予めご了承下さい",
+  "main": "index.js",
+  "scripts": {
+    "textlint": "textlint \"draft_entries/**\\*.md\"",
+    "textlint:fix": "textlint --fix \"draft_entries/**\\*.md\"",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "draft_entries/**/*.md": "textlint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kos0514/kos0514.hatenablog.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kos0514/kos0514.hatenablog.com/issues"
+  },
+  "homepage": "https://github.com/kos0514/kos0514.hatenablog.com#readme",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "textlint": "^14.7.2",
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2",
+    "textlint-rule-preset-japanese": "^10.0.4",
+    "textlint-rule-prh": "^6.1.0",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
+  }
+}

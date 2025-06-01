@@ -185,3 +185,32 @@ CustomPath: custom/url
 
 - 各 workflow では下記で提供されている Reusable workflows を利用しています
   - https://github.com/hatena/hatenablog-workflows
+
+## textlint による文章チェック
+
+このリポジトリでは、Markdownファイルの文章品質を保つためにtextlintを導入しています。textlintは日本語の文章をチェックするツールで、文法や表記の一貫性を維持するのに役立ちます。
+
+### 設定内容
+
+- 対象ファイル: `draft_entries` ディレクトリ内のMarkdownファイル
+- 使用ルール:
+  - `preset-japanese`: 日本語の一般的なルールセット
+  - `preset-ja-technical-writing`: 技術文書向けのルールセット
+  - `spellcheck-tech-word`: 技術用語のスペルチェック
+  - `prh`: 表記ゆれを検出・修正するためのルール
+
+### 使用方法
+
+手動でtextlintを実行する場合:
+
+```powershell
+# 文章をチェックする
+npm run textlint
+
+# 自動修正可能な問題を修正する
+npm run textlint:fix
+```
+
+### 自動チェック
+
+huskyとlint-stagedを使用して、コミット時に変更されたMarkdownファイルに対して自動的にtextlintが実行されます。エラーがある場合はコミットが中断されます。
